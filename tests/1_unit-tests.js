@@ -7,19 +7,19 @@ let convertHandler = new ConvertHandler();
 suite("Unit Tests", function () {
   suite("Tests related to numeric values", function () {
     test("Should correctly read a whole number input", function () {
-      let result = convertHandler.getNum("2");
+      let result = convertHandler.getNum("2km");
       assert.isOk(Number.isInteger(result));
     });
     test("Should correctly read a decimal number input", function () {
-      let result = convertHandler.getNum("1.5");
+      let result = convertHandler.getNum("1.5km");
       assert.isNotOk(Number.isInteger(result));
     });
     test("should correctly read a fractional input with a decimal", function () {
-      let result = convertHandler.getNum("1/5");
+      let result = convertHandler.getNum("1/5km");
       assert.isNotOk(Number.isInteger(result));
     });
     test("Should correctly return an error on a double-fraction", function () {
-      let result = convertHandler.getNum("3/2/3");
+      let result = convertHandler.getNum("3/2/3km");
       assert.isNotTrue(result);
     });
     test("Should correctly default to a numerical input of 1 when no numerical input is provided", function () {
